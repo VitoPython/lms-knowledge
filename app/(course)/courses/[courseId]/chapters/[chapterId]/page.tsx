@@ -17,8 +17,7 @@ const  ChapterIdPage = async ({
         chapterId: string;
     };
 }) => {
-    const { chapterId } = await params;
-    const { courseId } = await params;
+    const { courseId, chapterId } = params;
     const { userId } = await auth();
     
     if (!userId) {
@@ -35,8 +34,8 @@ const  ChapterIdPage = async ({
         purchase
      } = await getChapter({
         userId,
-        chapterId:chapterId,
-        courseId:courseId
+        chapterId,
+        courseId
     })
 
     if (!chapter || !course) {
