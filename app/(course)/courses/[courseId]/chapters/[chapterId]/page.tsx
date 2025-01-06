@@ -17,7 +17,7 @@ const  ChapterIdPage = async ({
         chapterId: string;
     };
 }) => {
-    const { courseId, chapterId } = params;
+    const { courseId, chapterId } = await params;
     const { userId } = await auth();
     
     if (!userId) {
